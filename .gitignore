@@ -1,0 +1,14 @@
+# Virtual environment
+ne_venv/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+
+
+# Raw dataset
+data/raw/*.csv
