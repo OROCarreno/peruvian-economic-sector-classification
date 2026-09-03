@@ -7,8 +7,3 @@ venv/
 __pycache__/
 *.pyc
 *.pyo
-
-
-
-# Raw dataset
-data/raw/*.csv
