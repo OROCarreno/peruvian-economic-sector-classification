@@ -1,6 +1,6 @@
 import pandas as pd 
 
-df = pd.read_csv("../data/raw/epen_2025.csv")
+df = pd.read_csv("data/raw/epen_2025.csv")
 
 def get_columns():
     # Get only the colums we want as a feature of the neurons.

@@ -1,6 +1,6 @@
 from sklearn.utils.class_weight import compute_class_weight
 from sklearn.metrics import classification_report
-from data_normalised import normalised
+from src.data_normalised import normalised
 import tensorflow as tf
 
 X_train,X_cv,X_test,y_train,y_cv,y_test = normalised()

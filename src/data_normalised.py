@@ -1,4 +1,4 @@
-from split_data import split
+from src.split_data import split
 import tensorflow as tf
 import numpy as np
 import pandas as pd

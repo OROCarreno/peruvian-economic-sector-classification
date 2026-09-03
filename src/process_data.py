@@ -1,4 +1,4 @@
-from load import get_columns
+from src.load import get_columns
 
 def create_sectors():
     data = get_columns()

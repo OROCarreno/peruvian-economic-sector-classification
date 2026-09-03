@@ -1,4 +1,4 @@
-from data_normalised import normalised
+from src.data_normalised import normalised
 import numpy as np
 
 def testing():

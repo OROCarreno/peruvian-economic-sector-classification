@@ -1,4 +1,4 @@
-from process_data import create_sectors
+from src.process_data import create_sectors
 from sklearn.model_selection import train_test_split
 
 def split():
