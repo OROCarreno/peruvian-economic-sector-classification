@@ -4,6 +4,12 @@ import numpy as np
 import pandas as pd
 
 def normalised():
+    """
+    Normalise the data so adams algorithm can run faster.
+
+    Returns:
+        np: train,cv and test data
+    """
     X_train,X_cv,X_test,y_train,y_cv,y_test = split()
     # we only want to normalised numerical data 
     numerical_data =[
