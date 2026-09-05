@@ -80,7 +80,7 @@ def normalised():
         dtype=float
     )
 
-    #making sure they ahve the same colums
+    #making sure they have the same columns
     X_cv_cat = X_cv_cat.reindex(
         columns=X_train_cat.columns,
         fill_value=0
