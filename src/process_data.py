@@ -1,6 +1,12 @@
 from src.load import get_columns
 
 def create_sectors():
+    """
+    Get the sector by their first 2 numbers
+
+    Returns:
+        _type_: _description_
+    """
     data = get_columns()
     data["division"] = data["economic_activity"].astype(int)//100
     data["sector"] = data["division"].apply(get_sector)
@@ -8,6 +14,7 @@ def create_sectors():
 
 
 def get_sector(division):
+
 
     if 1 <= division <= 3 or 5 <= division <= 9:
         return 0   # Primary sector
