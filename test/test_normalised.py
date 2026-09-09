@@ -3,7 +3,7 @@ import numpy as np
 
 def testing():
     """
-    Checking that we dont have any NaN feature value.
+    Checking that we don't have any NaN feature value.
     """
     X_train,X_cv,X_test,_,_,_ = normalised()
     assert not np.isnan(X_train).any()
