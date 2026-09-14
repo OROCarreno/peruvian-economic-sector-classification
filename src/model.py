@@ -26,6 +26,9 @@ class_weights = {
 
 
 def biggest():
+    """
+    Biggest neural network model with 4 hidden layers
+    """
     tf.random.set_seed(12345) #same result
     name = "biggest"
     model = tf.keras.Sequential([
