@@ -2,25 +2,27 @@ from sklearn.utils.class_weight import compute_class_weight
 from sklearn.metrics import classification_report
 from src.data_normalised import normalised
 import tensorflow as tf
+import numpy as np
 
 X_train,X_cv,X_test,y_train,y_cv,y_test = normalised()
 
-# classes = np.unique(y_train)
+classes = np.unique(y_train)
 
-# weights = compute_class_weight(
-#     class_weight="balanced",
-#     classes=classes,
-#     y=y_train
-# )
-# class_weights = dict(zip(classes, weights))
+weights = compute_class_weight(
+    class_weight="balanced",
+    classes=classes,
+    y=y_train
+)
+# print(weights)
+class_weights = dict(zip(classes, weights))
 # I change the weights based on the clasification report to get better results
-class_weights = {
-    0: 1.0,
-    1: 1.9,
-    2: 1.5,
-    3: 1.1,
-    4: 0.9
-}
+# class_weights = {
+#     0: 1.0,
+#     1: 1.9,
+#     2: 1.5,
+#     3: 1.1,
+#     4: 0.9
+# }
 
 ##Creating the neural model
 
@@ -39,7 +41,7 @@ def biggest():
         tf.keras.layers.Dense(32, activation="relu",name ="l5"),
         tf.keras.layers.Dense(5, activation="linear",name="l6")
     ])
-    call(model,name)
+    return call(model,name)
 
 def mid_big():
     tf.random.set_seed(12345) #same result
@@ -51,7 +53,7 @@ def mid_big():
         tf.keras.layers.Dense(5, activation="linear",name="l4")
     ]
     )
-    call(model,name)
+    return call(model,name)
 
    
 
@@ -65,7 +67,7 @@ def mid_small():
         tf.keras.layers.Dense(5, activation="linear",name="l3")
     ]
     )
-    call(model,name)
+    return call(model,name)
 
     
 
@@ -77,7 +79,7 @@ def small():
         tf.keras.layers.Dense(5, activation="linear",name="l2")
     ]
     )
-    call(model,name)
+    return call(model,name)
 
 
 def call(model_size,name):
@@ -107,15 +109,16 @@ def call(model_size,name):
     y_test
     )
     
-    return f"{name} neural size has loss of:{test_loss}, and accuracy of: {test_accuracy*100:.2f}"
+    
     #to check the clasification report 
-    # test_logits = model_size.predict(X_cv, verbose=0)
-    # test_predictions = np.argmax(test_logits, axis=1)
+    test_logits = model_size.predict(X_cv, verbose=0)
+    test_predictions = np.argmax(test_logits, axis=1)
     # print(classification_report(y_cv, test_predictions))  
+    return f"{name} neural size has loss of:{test_loss}, and accuracy of: {test_accuracy*100:.2f}"
 
 
-biggest()
-mid_big()
-mid_small()
-small()
+# print(biggest())
+# print(mid_big())
+# print(mid_small())
+print(small())
 
