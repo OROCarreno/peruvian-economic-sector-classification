@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 
 def split():
     """
-    splitting by training, cross validation and test.
+    Splitting by training, cross validation and test.
     Returns:
         _type_: _description_
     """
