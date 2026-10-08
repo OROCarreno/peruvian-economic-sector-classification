@@ -29,7 +29,7 @@ class_weights = dict(zip(classes, weights))
 
 def biggest():
     """
-    Biggest neural network model with 4 hidden layers
+    Biggest neural network model with 4 hidden layers.
     """
     tf.random.set_seed(12345) #same result
     name = "biggest"
